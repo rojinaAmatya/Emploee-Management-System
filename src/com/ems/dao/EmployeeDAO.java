@@ -8,7 +8,7 @@ public interface EmployeeDAO {
     public void addEmployee();
     List<Employee> viewEmployees();
     Employee viewEmployee(int emp_id);
-    void updateEmployee();
-    void deleteEmployee();
+    void updateEmployee(int emp_id);
+    void deleteEmployee(int emp_id);
 }
 
