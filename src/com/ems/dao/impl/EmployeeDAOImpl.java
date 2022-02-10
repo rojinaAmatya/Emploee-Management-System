@@ -36,21 +36,54 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public List<Employee> viewEmployees() {
-        return null;
+        return addEmployees;
     }
 
     @Override
     public Employee viewEmployee(int emp_id) {
+        for (Employee emp: addEmployees){
+            if(emp.getEmp_id() == emp_id){
+                return emp;
+            }
+        }
         return null;
     }
 
     @Override
-    public void updateEmployee() {
+    public void updateEmployee(int emp_id) {
+        for(Employee emp: addEmployees){
+            if(emp.getEmp_id()== emp_id){
+                System.out.println("Do you want to update 1.Employee name 2.Employee Address? ");
+                int choice = sc.nextInt();
+                switch(choice){
+                    case 1:
+                        System.out.println("Enter employee name to update: ");
+                        emp.setEmp_name(sc.next());
+                        break;
 
+                    case 2:
+                        System.out.println("Enter employee address to update: ");
+                        emp.setEmp_address(sc.next());
+                        break;
+                    default:
+                        System.out.println("Choose Option 1 or 2");
+                }// end of switch
+            }// end of if
+        }//end of for
     }
 
     @Override
-    public void deleteEmployee() {
+    public void deleteEmployee(int emp_id) {
+        int j = 0;
+        for (Employee emp: addEmployees){
+            if(emp.getEmp_id() == emp_id){
+                ++j;
+               addEmployees.remove(emp);
+            }
+        }
+        if (j == 0){
+            System.out.println("Employee record is not found");
+        }
 
     }
 }
