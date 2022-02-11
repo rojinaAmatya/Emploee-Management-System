@@ -59,11 +59,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                     case 1:
                         System.out.println("Enter employee name to update: ");
                         emp.setEmp_name(sc.next());
+                        System.out.println("Employee name is updated");
                         break;
 
                     case 2:
                         System.out.println("Enter employee address to update: ");
                         emp.setEmp_address(sc.next());
+                        System.out.println("Employee address is updated");
+
                         break;
                     default:
                         System.out.println("Choose Option 1 or 2");
@@ -79,6 +82,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             if(emp.getEmp_id() == emp_id){
                 ++j;
                addEmployees.remove(emp);
+                System.out.println("Employee information is deleted");
+               break;
             }
         }
         if (j == 0){
