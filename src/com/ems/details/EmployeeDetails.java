@@ -1,5 +1,6 @@
 package com.ems.details;
 
+import com.ems.client.EmployeeClient;
 import com.ems.dao.impl.EmployeeDAOImpl;
 import com.ems.pojo.Employee;
 
@@ -59,11 +60,12 @@ public class EmployeeDetails {
 
                 case 5:
                     System.out.println("Enter Employee ID:");
-                    daoImpl.deleteEmployee(sc.nextInt();
+                    daoImpl.deleteEmployee(sc.nextInt());
                     empDetails();
                     break;
 
                 case 6:
+                    EmployeeClient.main(null);
                     break;
 
                 default:
